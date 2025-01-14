@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Projects</title>
+    <link rel="stylesheet" href="styling/global_style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+</head>
+<body>
+    <h1>My GitHub Projects</h1>
+    <div id="repo-list"></div>
+    <script>
+        const username = "dkslinkyyy"
+        const apiUrl = `https://api.github.com/users/${username}/repos`;
+
+        async function fetchRepositories() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.statusText}`);
+                }
+                const repos = await response.json();
+                const repoList = document.getElementById('repo-list');
+                const languageIcons = {
+                    JavaScript: 'devicon-javascript-plain',
+                    Python: 'devicon-python-plain',
+                    Java: 'devicon-java-plain',
+                    HTML: 'devicon-html5-plain',
+                    CSS: 'devicon-css3-plain',
+                };
+
+                repos.forEach(repo => {
+                    const iconClass = languageIcons[repo.language] || 'devicon-github-original';
+                    repoList.innerHTML += `
+                        <div class="repo">
+                            <i class="${iconClass}"></i>
+                            <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                            <p>${repo.description || "No description"}</p>
+                            <p>Language: ${repo.language || "Not specified"}</p>
+                        </div>
+                    `;
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        fetchRepositories();
+    </script>
+</body>
+</html>
