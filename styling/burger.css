@@ -50,6 +50,6 @@ body {
 }
 
 .burger.active::after {
-    top: 50%;
+    top:50%;
     transform: translateY(-50%) rotate(-45deg);
 }

@@ -1,16 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
 
+:root {
+    --primary-bg-color: rgb(15, 17, 28);
+    --secondary-bg-color: rgb(39, 43, 58);
+    --nav-color: rgb(7, 8, 12);
+    --primary-text-color: #acacac;
+    --secondary-text-color: #3855d6;
+}
+
+* {
+    font-family: "Poppins", serif;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Poppins", serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #232323;
-    margin: 0;
-    height: 100vh;
+    background-color: var(--primary-bg-color);
     color: white;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
 }
 
 header {
@@ -19,68 +30,151 @@ header {
     left: 0;
     height: 100vh;
     width: 10vw;
-
 }
+
 nav {
     height: 100vh;
     width: 10vw;
     display: flex;
-    background-color: white;
+    background-color: var(--nav-color);
     justify-content: center;
     align-items: center;
-    
+    flex-direction: column;
+    gap: 7vh;
+    font-size: 16px;
 }
 
-.hero-section {
-    width: 50vw;
-    height: 50vh;
+nav i {
+    font-size: 24px;
+}
+
+nav a, nav i {
+    font-family: inherit;
+    text-transform: none;
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+nav p {
+    margin-top: 2vh;
+    position: fixed;
+    top: 0;
+    font-size: 36px;
+    color: white;
+}
+
+p {
+    color: #acacac;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.about-card {
+    width: 80%;
+    max-width: 900px;
+    height: 60vh;
+    background-color: var(--secondary-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 30px;
     position: relative;
 }
 
-.hero-content {
-    width: 100%;
-    background-color: #191919;
-    height: 100%;
-    margin: auto;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+
+
+.code-snippet {
+    font-family: "Cedarville Cursive", serif;
+    font-size: 25px;
+    color: var(--secondary-text-color);
 }
 
+.about-content {
+    width: 100%;
+    text-align: center;
+}
+
+.highlight {
+    color: var(--secondary-text-color);
+}
+
+.about-content h1 {
+    font-size: 32px;
+}
+
+.about-content-details {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 10vh;
+}
+
+.about-content-details span {
+    font-size: 16px;
+}
+
+.about-card::after, .about-card::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle),transparent 25%, blue, aqua, lightblue, blue);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 15px;
+    animation: 15s spin linear infinite;
+}
+
+.about-content::before {
+    filter: blur(1.5rem);
+    opacity: .5;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
 
 .container1 {
     position: absolute;
-    top: -3vh;
-    left: -1vh;
+    top: -2vh;
+    left: -2vh;
     transform: rotate(-15deg);
 }
 
 .container2 {
     position: absolute;
-    bottom: -5vh;
-    right: -5vh;
-    transform: rotate(-11deg);
-
-}
-.code-snippet {
-    font-family: "Cedarville Cursive", serif;
-    font-size: 25px;
+    bottom: -1vh;
+    right: -3vh;
+    transform: rotate(-15deg);
 }
 
-.repo {
-    padding: 15px 0 10px 15px;
-    background-color:rgb(48, 48, 48);
-    width: 50%;
-    border-radius: 10px;
-    margin-top: 50px;
-}
-.repo a {
-    text-decoration: none;
-    color: #0366d6;
-    font-weight: bold;
-}
-.repo a:hover {
-    text-decoration: underline;
+.highlight {
+    color: var(--secondary-text-color);
 }
