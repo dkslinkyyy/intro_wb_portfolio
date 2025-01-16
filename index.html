@@ -3,97 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dawid Kowalski - Portfolio</title>
-    <link rel="stylesheet" href="styling/global_style.css".css">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styling/global_style.css">
+    <link rel="stylesheet" href="styling/test.css">
 </head>
 <body>
+    <section  class="loading-screen" id="loadingScreen">
+        <img src="assets/initialer.png" width="500px" alt="logga initialer">
+    </section>
     <header>
         <nav>
-            <p>DK</p>
-            <a href="/">
-                <i class="fa-regular fa-house"></i> 
+            <img src="assets/initialer.png" alt="Logga initialer" width="150px">
+            <a href="/" class="nav-link">
+                <i class="fa-solid fa-house active-page"></i>
             </a>
-            <a href="/">
-                <i class="fa-regular fa-user"></i> 
+            <a href="/pages/about.html" class="nav-link">
+                <i class="fa-solid fa-user"></i>
             </a>
-
-            <a href="projects.html">
-                <i class="fa-regular fa-envelope"></i> 
+            <a href="/pages/projects.html" class="nav-link">
+                <i class="fa-solid fa-sheet-plastic"></i>
+            </a>
+            
+            <a href="/pages/contact.html" class="nav-link">
+                <i class="fa-regular fa-envelope"></i>
             </a>
         </nav>
-        
     </header>
     <main>
+        <section class="hero-section">
+            <div class="container1">
+                <p class="code-snippet">&lt;/HelloWorld/&gt;</p>
+            </div>            
+            <div class="hero-content">
+                <h1 class="hero-title-primary highlight">Hej.</h1>
+                <h2 class="hero-title-secondary">Det är jag som är <span class="underline">Dawid</span></h2>
+                <p class="hero-text"> Jag är mer än bara en <span class="typewriter"></span></p>
 
-            <section class="about-card">
-                <div class="container1">
-                    <p class="code-snippet">
-                        &lt;Hello/&gt; 
-                    </p>   
-                </div>
-                
-                <h1>
-                    Vem är <span class="highlight">jag</span>?
-                </h1>
-
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                    Totam, dicta illo placeat assumenda quas temporibus quod 
-                    voluptatibus alias non recusandae beatae tempore magnam sequi! Repellendus!
-                </p>
-
-                <div class="about-content-details">
-                    <span>
-                        <i class="fa-solid fa-code"></i> Utvecklat i <span class="highlight">+7</span> år
-                    </span>
-
-                    <span>
-                       <i class="fa-solid fa-location-dot"></i> Stockholm, Sverige
-                    </span>
-                </div>
-                <div class="container2">
-                    <p class="code-snippet">
-                        &lt;World/&gt; 
-                    </p>   
-                </div>
-            
-            </section>
-
-    
-            <section class="about-card">
-                <div class="container1">
-                    <p class="code-snippet">
-                        &lt;Tech/&gt; 
-                    </p>   
-                </div>
-                <h1>
-                    Min <span class="highlight">Tech Stack</span>
-                </h1>
-    
-                <p>
-                    Jag använder moderna teknologier och verktyg för att bygga effektiva lösningar.
-                </p>
-    
-                <div class="about-content-details">
-                    <span>
-                        <i class="fa-solid fa-laptop-code"></i> JavaScript, Go, Java
-                    </span>
-    
-                    <span>
-                        <i class="fa-solid fa-database"></i> PostgreSQL, MongoDB
-                    </span>
-    
-                    <span>
-                        <i class="fa-solid fa-cogs"></i> Docker, Kubernetes
-                    </span>
-                </div>
-                <div class="container2">
-                    <p class="code-snippet">
-                        &lt;/Tech/&gt; 
-                    </p>   
-                </div>
-            </section>
+                <button class="hero-btn" onclick="window.location.href='pages/about.html'">Mer om mig</button>
+            </div>
+            <div class="image-wrapper">
+                <img src="assets/portrait.JPG" alt="Portrait" width="500px">
+                <div class="overlay"></div>
+            </div>
+            <div class="container2">
+                <p class="code-snippet">&lt;/HelloWorld/&gt;</p>
+            </div>
+        </section>
     </main>
+
+
+    <footer>
+         Dawid Kowalski © 2024
+    </footer>
+    
+    
     <script src="https://kit.fontawesome.com/7acabd69fa.js" crossorigin="anonymous"></script>
+    <script src="scripts/typewriter.js"></script>
+    <script src="scripts/loadingScreen.js"></script>
+
 </body>
 </html>

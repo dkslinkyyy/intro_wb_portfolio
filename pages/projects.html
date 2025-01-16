@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Projects</title>
+    <link rel="stylesheet" href="../styling/global_style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="../styling/project_style.css">
+</head>
+<body>
+    <section  class="loading-screen" id="loadingScreen">
+        <img src="../assets/initialer.png" width="500px" alt="logga initialer">
+    </section>
+    <header>
+        <nav>
+            <img src="../assets/initialer.png" alt="Logga initialer" width="150px">
+            <a href="/"class="nav-link">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a href="../pages/about.html" class="nav-link">
+                <i class="fa-regular fa-user"></i> 
+            </a>
+
+            <a href="../pages/projects.html" class="nav-link">
+                <i class="fa-solid fa-envelope active-page"></i> 
+            </a>
+        </nav>
+        
+    </header>
+
+    <main>
+        <div class="project-page-description-card">
+            <h1>My GitHub Projects</h1>
+            <p>Lorem ipsum dolor sit amet, 
+                consectetur adipisicing elit. 
+                Recusandae accusamus dicta aliquid nesciunt 
+                consectetur placeat!</p>
+        </div>
+        <div id="repo-list"></div>
+    </main>
+    <script src="../scripts/fetchProjects.js"></script>
+    <script src="https://kit.fontawesome.com/7acabd69fa.js" crossorigin="anonymous"></script>
+    <script src="../scripts/loadingScreen.js"></script>
+</body>
+</html>
