@@ -102,13 +102,27 @@
 }
 
 .image-wrapper {
-    position: relative;
-    width: 800px;
-    height: 800px;
+    width: 80vh;
+    height: 80vh;
     border-radius: 50%;
     overflow: hidden;
-    animation: fadeInImage 2s forwards;
-    animation-delay: 1s; 
+    animation: fadeInImage 2s forwards, pulseImage 10s infinite;
+    animation-delay: 2s; 
+}
+
+@keyframes pulseImage {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.04); /* Slightly scale up */
+    }
+    100% {
+        transform: scale(1); /* Return to original size */
+    }
 }
 
 .image-wrapper img {
@@ -162,7 +176,7 @@
         filter: blur(0);
     }
     to {
-        filter: blur(1rem);
+        filter: blur(.6rem);
     }
 }
 

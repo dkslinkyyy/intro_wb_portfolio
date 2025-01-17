@@ -13,30 +13,27 @@
         <img src="../assets/initialer.png" width="500px" alt="logga initialer">
     </section>
     <header>
-        <nav>
+        <div class="header-logo">
             <img src="../assets/initialer.png" alt="Logga initialer" width="150px">
-            <a href="/"class="nav-link">
+        </div>
+        <nav>
+            <a href="/" class="nav-link">
                 <i class="fa-solid fa-house"></i>
             </a>
-            <a href="../pages/about.html" class="nav-link">
-                <i class="fa-regular fa-user"></i> 
+            <a href="./about.html" class="nav-link">
+                <i class="fa-solid fa-user"></i>
             </a>
-
-            <a href="../pages/projects.html" class="nav-link">
-                <i class="fa-solid fa-envelope active-page"></i> 
+            <a href="./projects.html" class="nav-link">
+                <i class="fa-solid fa-sheet-plastic active-page"></i>
+            </a>
+            
+            <a href="./contact.html" class="nav-link bottom">
+                <i class="fa-regular fa-envelope"></i>
             </a>
         </nav>
-        
     </header>
 
     <main>
-        <div class="project-page-description-card">
-            <h1>My GitHub Projects</h1>
-            <p>Lorem ipsum dolor sit amet, 
-                consectetur adipisicing elit. 
-                Recusandae accusamus dicta aliquid nesciunt 
-                consectetur placeat!</p>
-        </div>
         <div id="repo-list"></div>
     </main>
     <script src="../scripts/fetchProjects.js"></script>

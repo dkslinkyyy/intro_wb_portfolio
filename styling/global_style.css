@@ -1,80 +1,86 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
-
+/* Root variables */
 :root {
-    --primary-bg-color: rgb(15, 17, 28);
+    --primary-bg-color: rgba(5,9,10,255);
     --secondary-bg-color: rgb(39, 43, 58);
     --nav-color: rgb(7, 8, 12);
     --primary-text-color: #acacac;
     --secondary-text-color: #3855d6;
 }
 
+/* Reset styles */
 * {
-    font-family: "Poppins", serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Flexbox layout for the body */
 body {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    height: 100vh; /* Full viewport height */
     font-family: "Poppins", serif;
-    background-color: var(--primary-bg-color);
     color: white;
-    margin: 0;
-    padding: 0;
-    overflow-y: auto;
-}
-
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: var(--primary-bg-color);
 }
 
 
+
+label {
+    color: var(--primary-text-color);
+}
+
+label, input, textarea {
+    display: block; 
+    font-family: inherit; 
+    width: 100%;
+}
+
+button {
+    background-color: var(--secondary-text-color);
+    outline: none;
+    border: none;
+    color: white;
+    height: 3vh;
+    border-radius: 1vh;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+/* Header section */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    width: 10vw;
+    width: 10vw; /* 20% of the viewport width */
     z-index: 4;
+    padding: 2vh 0;
+    background: rgb(5,9,10);
+    background: linear-gradient(61deg, rgba(5,9,10,1) 0%, rgba(9,16,18,1) 70%, rgba(5,9,10,1) 100%);    gap: 7vh;
 }
 
+/* Navbar styles */
 nav {
-    height: 100vh;
-    width: 10vw;
+    height: 100vh; /* Full height of the viewport */
+    width: 100%; /* Full width within the header */
     display: flex;
-    background: rgb(7,8,12);
-    background: linear-gradient(104deg, rgba(7,8,12,1) 0%, rgba(17,21,37,1) 50%, rgba(11,13,23,1) 100%);
+    flex-direction: column; /* Stack the items vertically */
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 7vh;
+    gap: 5vh;
     font-size: 16px;
-}
-
-.underline {
     position: relative;
 }
 
-.underline::after {
-    content: "";
+nav a.bottom {
     position: absolute;
-    width: 100%;
-    height: 7px;
-    border-radius: 15%;
-    bottom: 0;
-    left: 0;
-    z-index: 3;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    bottom: 2vh;
 }
 
-
-nav i {
-    font-size: 24px;
-}
-
+/* Nav links and icons */
 nav a, nav i {
     font-family: inherit;
     text-transform: none;
@@ -82,83 +88,53 @@ nav a, nav i {
     text-decoration: none;
 }
 
+nav i {
+    font-size: 24px;
+}
+
 nav img {
     margin-top: 2vh;
-    position: fixed;
-    top: 0;
     font-size: 36px;
     color: white;
 }
 
-nav:nth-child(1){
-    color: red;
-    background-color: red;
+/* Main content section */
+main {
+    flex: 1; /* Take up the remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Align content to the top */
+    align-items: center;
+    gap: 20px;
 }
 
-
-footer{
-    position: fixed;
-    width: 100vw;
+/* Footer */
+footer {
+    position: absolute;
+    width: 80%;
+    left: 10%;
     height: 5vh;
     z-index: 6;
     bottom: 0;
     text-align: center;
     opacity: 0;
-    transform: translateY(50px);
     animation: fadeInFooter 2s forwards;
-    animation-delay: 4s;
-
+    animation-delay: 13s;
 }
 
-@keyFrames fadeInFooter {
+@keyframes fadeInFooter {
     from {
-        transform: translateY(50px);
         opacity: 0;
     }
 
     to {
-        transform: translateY(0);
         opacity: 1;
     }
 }
 
 
 
-
-
-p {
-    color: #acacac;
-}
-.scroll-container {
-    height: 100vh; /* Full viewport height */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: scroll; /* Allow vertical scrolling */
-    scroll-snap-type: y mandatory; /* Enable snapping */
-    flex-direction: column;
-    scroll-behavior: smooth;
-}
-
-.scroll-container::-webkit-scrollbar{
-    display: none;
-}
-
-.card-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50vh;
-    padding-bottom: 20vh;
-    overflow-y: scroll; /* Always show the scrollbar */
-    scroll-snap-type: y mandatory;
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: var(--secondary-text-color) transparent; /* Custom scrollbar color for Firefox */
-}
-
-
+/* Active page style */
 .active-page {
     animation: colorfade 1s linear forwards;
     font-size: 28px;
@@ -166,23 +142,21 @@ p {
 
 @keyframes colorfade {
     from {
-        color: var(--primary-text-color); /* Initial color */
+        color: var(--primary-text-color);
     }
     to {
-        color: var(--secondary-text-color); /* Final color */
+        color: var(--secondary-text-color);
     }
 }
 
-
-
+/* Code snippet font */
 .code-snippet {
     font-family: "Marck Script", serif;
     font-weight: 400;
     font-style: normal;
 }
 
-
-
+/* Positioned elements */
 .container1 {
     top: -2vh;
     left: -2vh;
@@ -199,38 +173,53 @@ p {
     position: absolute;
     z-index: 2;
     font-size: 24px;
-    
 }
 
 .highlight {
     color: var(--secondary-text-color);
 }
 
+/* Loading screen styles */
 .loading-screen {
     position: fixed;
     top: 0;
     left: 0;
-    width: 0; /* Start with 0 width */
+    width: 0%; /* Start with 0% width */
     height: 100%;
-    background-color: var(--primary-bg-color); 
+    background-color: var(--primary-bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    opacity: 1; /* Set to 1 for visibility during the animation */
-    pointer-events: none; /* Prevent interaction */
-    transition: width 1s ease-in-out; /* Smooth width animation */
-}
-.loading-screen img {
-    opacity: 0;
+    opacity: 1;
+    pointer-events: none;
+    transition: width 1s ease-in-out; /* Expanding and shrinking transition */
 }
 
+.loading-screen img {
+    opacity: 0; /* Initially hide the image */
+    transition: opacity 1s ease-in-out; /* Apply opacity transition */
+}
+
+/* Expanding loading screen */
 .loading-screen.active {
     width: 100%; /* Expand to full width */
-    pointer-events: all; /* Enable interaction */
+    pointer-events: all;
 }
-
 
 .loading-screen.active img {
-    opacity: 1;
+    opacity: 1; /* Fade in the image when active */
 }
+
+/* Reverse animation: width resets to 100% before shrinking */
+.loading-screen.reverse {
+    width: 100%; /* Reset width to 100% */
+    pointer-events: none;
+    transition: width 0s; /* Disable transition for width reset */
+}
+
+/* Make sure image stays visible during reverse state */
+.loading-screen.reverse img {
+    opacity: 1; /* Keep the image visible */
+}
+

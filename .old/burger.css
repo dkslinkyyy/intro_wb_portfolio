@@ -43,7 +43,7 @@ body {
     transform: translateY(-50%);
 }
 
-/* When Active */
+
 .burger.active::before {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);

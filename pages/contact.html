@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dawid Kowalski - Portfolio</title>
+    <link rel="stylesheet" href="../styling/global_style.css">
+    <link rel="stylesheet" href="../styling/contact.css">
+</head>
+<body>
+    <section  class="loading-screen" id="loadingScreen">
+        <img src="../assets/initialer.png" width="500px" alt="logga initialer">
+    </section>
+    <header>
+        <div class="header-logo">
+            <img src="../assets/initialer.png" alt="Logga initialer" width="150px">
+        </div>
+        <nav>
+            <a href="/" class="nav-link">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <a href="./about.html" class="nav-link">
+                <i class="fa-solid fa-user active-page"></i>
+            </a>
+            <a href="./projects.html" class="nav-link">
+                <i class="fa-solid fa-sheet-plastic"></i>
+            </a>
+            
+            <a href="./contact.html" class="nav-link bottom">
+                <i class="fa-regular fa-envelope"></i>
+            </a>
+        </nav>
+    </header>
+    <main class="scroll-container">
+        
+        <section class="contact-section">
+            <div class="contact-card">
+                <h1 class="contact-title">Kontakta Mig</h1>
+
+                <form class="contact-content">
+                    <div class="form-group">
+                        <label for="fname">Fullständiga namn</label>
+                        <input type="text" id="fname" name="fname">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Mejl</label>
+                        <input type="text" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Meddelande</label>
+                        <textarea id="message" name="message" rows="4" cols="50" placeholder="Skriv ditt meddelande här.."></textarea>
+                    </div>
+                    <button type="submit">Skicka</button>
+                </form>      
+            </div>
+        </section>
+
+        <section class="socials-section">
+            <div class="socials-card">
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-github"></i>
+                <p>Mejl: dawid.kowalski@stud.sti.se</p>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+
+
+    </footer>
+    <script src="https://kit.fontawesome.com/7acabd69fa.js" crossorigin="anonymous"></script>
+    <script src="../scripts/loadingScreen.js"></script>
+</body>
+</html>

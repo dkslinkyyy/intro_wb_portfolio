@@ -73,6 +73,35 @@
     opacity: .5;
 }
 
+/* Scroll container styles */
+.scroll-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll; /* Allow vertical scrolling */
+    scroll-snap-type: y mandatory;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50vh;
+    padding-bottom: 20vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-text-color) transparent;
+}
+
 @property --angle {
     syntax: "<angle>";
     initial-value: 0deg;
