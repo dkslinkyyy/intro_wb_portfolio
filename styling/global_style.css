@@ -1,32 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
-/* Root variables */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+
+
 :root {
+    --background-image: url("/assets/bg.jpg");
     --primary-bg-color: rgba(5,9,10,255);
     --secondary-bg-color: rgb(39, 43, 58);
-    --nav-color: rgb(7, 8, 12);
+    --nav-color: linear-gradient(61deg, rgba(5,9,10,1) 0%, rgba(9,16,18,1) 70%, rgba(5,9,10,1) 100%);
     --primary-text-color: #acacac;
     --secondary-text-color: #3855d6;
+    
 }
 
-/* Reset styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Flexbox layout for the body */
+
 body {
+    position: relative;
+    z-index: 1;
     display: flex;
-    flex-direction: row; /* Horizontal layout */
-    height: 100vh; /* Full viewport height */
+    flex-direction: row;
+    height: 100vh;
     font-family: "Poppins", serif;
     color: white;
     background-color: var(--primary-bg-color);
 }
 
-
+span {
+    font-size: 36px;
+}
 
 label {
     color: var(--primary-text-color);
@@ -50,24 +58,26 @@ button {
 }
 
 
-/* Header section */
+
 header {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 10vw; /* 20% of the viewport width */
-    z-index: 4;
+    width: 10vw;
+    z-index: 99999;
     padding: 2vh 0;
     background: rgb(5,9,10);
-    background: linear-gradient(61deg, rgba(5,9,10,1) 0%, rgba(9,16,18,1) 70%, rgba(5,9,10,1) 100%);    gap: 7vh;
+    background: var(--nav-color);    
+    gap: 7vh;
 }
 
-/* Navbar styles */
+
 nav {
-    height: 100vh; /* Full height of the viewport */
-    width: 100%; /* Full width within the header */
+    height: 100vh;
+    width: 100%;
     display: flex;
-    flex-direction: column; /* Stack the items vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5vh;
@@ -80,7 +90,42 @@ nav a.bottom {
     bottom: 2vh;
 }
 
-/* Nav links and icons */
+.hero-section {
+    position: relative; /* Establish stacking context */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent pseudo-element overflow */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: blurHeroBG 3s forwards;
+    animation-delay: 5s;
+
+    z-index: 3; /* Keep it below the content */
+}
+
+.hero-content {
+    position: relative; /* Ensure elements stay on top */
+    z-index: 10; /* Place above the blurred background */
+}
+
+@keyframes blurHeroBG {
+    to {
+        filter: blur(1rem) grayscale(100%);
+    }
+}
+
+
 nav a, nav i {
     font-family: inherit;
     text-transform: none;
@@ -92,23 +137,58 @@ nav i {
     font-size: 24px;
 }
 
-nav img {
-    margin-top: 2vh;
-    font-size: 36px;
-    color: white;
+
+.header-logo {
+    max-width: 100%;
 }
 
-/* Main content section */
-main {
-    flex: 1; /* Take up the remaining space */
+.menu-toggle {
+    position: absolute;
+    top: 50%;
+    font-size: 36px;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.menu-toggle i.active {
+    opacity: 1;
+    visibility: visible;
+}
+.menu {
+    width: 0;
+    height: 100%;
+    background: var(--nav-color);
+    position: absolute;
+    z-index: 9999;
+    flex: 1;
+    opacity: 0;
+    transition: width .5s ease;
+}
+.menu-navbar {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Align content to the top */
+    width: 100%;
+    height: 100%;
+}
+
+.menu.active {
+    opacity: 1;
+    width: 50%;
+}
+
+main {
+    position: relative;
+    flex: 1;
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
-/* Footer */
+
 footer {
     position: absolute;
     width: 80%;
@@ -133,8 +213,48 @@ footer {
 }
 
 
+@media screen and (max-width: 800px) {
+    body {
+        flex-direction: column;
+    }
 
-/* Active page style */
+    header {
+        flex-direction: row;
+        width: 100%;
+        height: 10vh;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .header-logo {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+
+
+    nav {
+        display: none;
+    }
+    img {
+        height: 10vh;
+    }
+
+
+}
+
+@media screen and (min-width: 801px) {
+    .menu-toggle {
+        display: none; 
+    }
+    .menu.active {
+        opacity: 0;
+    }
+}
+
+
 .active-page {
     animation: colorfade 1s linear forwards;
     font-size: 28px;
@@ -149,14 +269,14 @@ footer {
     }
 }
 
-/* Code snippet font */
+
 .code-snippet {
     font-family: "Marck Script", serif;
     font-weight: 400;
     font-style: normal;
 }
 
-/* Positioned elements */
+
 .container1 {
     top: -2vh;
     left: -2vh;
@@ -179,12 +299,12 @@ footer {
     color: var(--secondary-text-color);
 }
 
-/* Loading screen styles */
+
 .loading-screen {
     position: fixed;
     top: 0;
     left: 0;
-    width: 0%; /* Start with 0% width */
+    width: 0%;
     height: 100%;
     background-color: var(--primary-bg-color);
     display: flex;
@@ -193,33 +313,33 @@ footer {
     z-index: 9999;
     opacity: 1;
     pointer-events: none;
-    transition: width 1s ease-in-out; /* Expanding and shrinking transition */
+    transition: width 1s ease-in-out;
 }
 
 .loading-screen img {
-    opacity: 0; /* Initially hide the image */
-    transition: opacity 1s ease-in-out; /* Apply opacity transition */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-/* Expanding loading screen */
+
 .loading-screen.active {
-    width: 100%; /* Expand to full width */
+    width: 100%;
     pointer-events: all;
 }
 
 .loading-screen.active img {
-    opacity: 1; /* Fade in the image when active */
+    opacity: 1;
 }
 
-/* Reverse animation: width resets to 100% before shrinking */
+
 .loading-screen.reverse {
-    width: 100%; /* Reset width to 100% */
+    width: 100%;
     pointer-events: none;
-    transition: width 0s; /* Disable transition for width reset */
+    transition: width 0s;
 }
 
-/* Make sure image stays visible during reverse state */
+
 .loading-screen.reverse img {
-    opacity: 1; /* Keep the image visible */
+    opacity: 1;
 }
 

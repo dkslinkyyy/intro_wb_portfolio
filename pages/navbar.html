@@ -5,20 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dawid Kowalski - Portfolio</title>
     <link rel="stylesheet" href="../styling/global_style.css">
-    <link rel="stylesheet" href="../styling/navbar.css">
 </head>
 <body>
     <section  class="loading-screen" id="loadingScreen">
         <img src="../assets/initialer.png" width="500px" alt="logga initialer">
     </section>
     <header>
-        <div class="header-logo">
-            <img src="../assets/initialer.png" alt="Logga initialer" width="150px">
-        </div>
-        <button class="menu-toggle" id="menuToggle">
+        <div class="menu-toggle" id="menuToggle">
             <i class="fa-solid fa-bars"></i>
-        </button>
-        <nav id="navBar">
+        </div>
+        <img src="../assets/initialer.png" alt="Logga initialer"class="header-logo">
+        <nav>
             <a href="/" class="nav-link">
                 <i class="fa-solid fa-house"></i>
             </a>
@@ -28,14 +25,24 @@
             <a href="./projects.html" class="nav-link">
                 <i class="fa-solid fa-sheet-plastic"></i>
             </a>
+            
             <a href="./contact.html" class="nav-link bottom">
                 <i class="fa-regular fa-envelope"></i>
             </a>
         </nav>
     </header>
-    
     <main class="scroll-container">
-        
+        <div class="menu" id="menu">
+            <nav class="menu-navbar">
+                <a href="/" class="menu-link">Hem</a>
+                <a href="./about.html" class="menu-link">Om mig</a>
+                <a href="./projects.html" class="menu-link">Projekt</a>
+                <a href="./cv.html" class="menu-link">CV</a>
+                <a href="./contact.html" class="menu-link">Kontakta mig</a>
+            </nav>
+
+            <span class="signature">Kowalski</span>
+        </div>
         <section class="contact-section">
             <div class="contact-card">
                 <h1 class="contact-title">Kontakta Mig</h1>
@@ -73,5 +80,6 @@
     </footer>
     <script src="https://kit.fontawesome.com/7acabd69fa.js" crossorigin="anonymous"></script>
     <script src="../scripts/loadingScreen.js"></script>
+    <script src="../scripts/menuToggle.js"></script>
 </body>
 </html>

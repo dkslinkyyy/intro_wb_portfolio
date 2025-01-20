@@ -1,12 +1,19 @@
 const username = "dkslinkyyy";
-const apiUrl = `https://api.github.com/users/${username}/repos`;
+const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&type=owner&type=all&acces_token=`;
+
 
 async function fetchRepositories() {
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(apiUrl, {
+            headers: {
+                Authorization: `token ${token}`, // Add token to authorization header
+            },
+        });
+
         if (!response.ok) {
             throw new Error(`Error: ${response.statusText}`);
         }
+
         const repos = await response.json();
         const repoList = document.getElementById('repo-list');
         const languageIcons = {
@@ -18,6 +25,7 @@ async function fetchRepositories() {
         };
 
         repos.forEach(repo => {
+            console.log(repo.name)
             const repoDiv = document.createElement('div');
             repoDiv.classList.add('repo');
 
