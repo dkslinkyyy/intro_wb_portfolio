@@ -3,64 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styling/global_style.css">
+    <title>Om mig - Dawid Kowalski - Portfolio</title>
+    <link rel="stylesheet" href="../styling/global_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <script src="../js/loadingScreen.js"></script>
+    <script src="https://kit.fontawesome.com/7acabd69fa.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 </head>
 <body>
-    <div  class="loading-screen" id="loadingScreen">
-        <img src="./assets/initialer.png" alt="logga initialer">
-    </div>
-    <header>
-        <div class="menu-toggle" id="menuToggle">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <img src="../assets/initialer.png" alt="Logga initialer"class="header-logo" width="150px">
-        <nav>
-            <a href="/" class="nav-link">
-                <i class="fa-solid fa-house active-page"></i>
-            </a>
-            <a href="./about.html" class="nav-link">
-                <i class="fa-solid fa-user"></i>
-            </a>
-            <a href="./projects.html" class="nav-link">
-                <i class="fa-solid fa-sheet-plastic"></i>
-            </a>
-            
-            <a href="./contact.html" class="nav-link bottom">
-                <i class="fa-regular fa-envelope"></i>
-            </a>
-        </nav>
-    </header>
-    <div class="menu" id="menu">
-        <nav class="menu-navbar">
-            <a href="/" class="menu-link">Hem</a>
-            <a href="./about.html" class="menu-link">Om mig</a>
-            <a href="./projects.html" class="menu-link">Projekt</a>
-            <a href="./cv.html" class="menu-link">CV</a>
-            <a href="./contact.html" class="menu-link">Kontakta mig</a>
-        </nav>
 
-    </div>        
-    <main> 
+    <div id="particles-js"></div>
+    <header class="header" id="header">
+        <div class="header-content">
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <img src="../assets/initialer.png" alt="Logo Initialer" class="header-logo">
+        </div>
+
+        <aside class="sidebar" id="sidebar">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link"><i class="fa-solid fa-house active-page"></i><p>Hem</p></a></li>
+                    <li><a href="./pages/about.html" class="nav-link"><i class="fa-solid fa-user"></i><p>Om mig</p></a></li>
+                    <li><a href="./projects.html" class="nav-link"><i class="fa-solid fa-sheet-plastic"></i><p>Projekt</p></a></li>
+                    <li class="bottom"><a href="./contact.html" class="nav-link"><i class="fa-regular fa-envelope"></i><p>Kontakt</p></a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+
+
+
+    <main class="main-section">
+
+
+
         <section class="hero-section">
+            <div class="image-wrapper">
+                <img src="../assets/portrait.JPG" alt="">
+            </div>
+
+            
             <div class="hero-content">
-                <h1>Hej</h1>
-                <h2>Det är jag som är Dawid</h2>
-                <p>Mer än bara..</p>
-                <button class="hero-cta-btn">Mer om mig</button>
-            </div>   
+                <h1>dkslinkyyy</h1>
+
+                <p class="headline2">Dawid Kowalski</p>
+                <p class="headline1">&lt;p&gt; Jag är mer än bara en <span class="typewriter"></span>&lt;/p&gt;</p>
+
+            </div>
 
         </section>
-    </main>
-    <footer>
-         Dawid Kowalski © 2024
-    </footer>
-    
-    
-    <script src="https://kit.fontawesome.com/7acabd69fa.js" crossorigin="anonymous"></script>
-    <script src="./scripts/typewriter.js"></script>
-    <script src="./scripts/loadingScreen.js"></script>
-    <script src="./scripts/menuToggle.js"></script>
 
+    </main>
+
+    <footer>
+        Dawid Kowalski &copy; 2024
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/menuToggle.js"></script>
 </body>
 </html>
