@@ -6,6 +6,7 @@
     <title>Om mig - Dawid Kowalski - Portfolio</title>
     <link rel="stylesheet" href="../styling/global_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    
     <script src="../js/loadingScreen.js"></script>
     <script src="https://kit.fontawesome.com/7acabd69fa.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
@@ -21,14 +22,14 @@
             </div>
             <img src="../assets/initialer.png" alt="Logo Initialer" class="header-logo">
         </div>
-
         <aside class="sidebar" id="sidebar">
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/" class="nav-link"><i class="fa-solid fa-house"></i><p>Hem</p></a></li>
-                    <li><a href="./pages/about.html" class="nav-link"><i class="fa-solid fa-user active-page"></i><p>Om mig</p></a></li>
-                    <li><a href="./projects.html" class="nav-link"><i class="fa-solid fa-sheet-plastic"></i><p>Projekt</p></a></li>
-                    <li class="bottom"><a href="./contact.html" class="nav-link"><i class="fa-regular fa-envelope"></i><p>Kontakt</p></a></li>
+                    <li><a href="../" class="nav-link"><i class="fa-solid fa-house"></i><p>Hem</p></a></li>
+                    <li><a href="../pages/about.html" class="nav-link"><i class="fa-solid fa-user"></i><p>Om mig</p></a></li>
+                    <li><a href="../pages/projects.html" class="nav-link"><i class="fa-solid fa-sheet-plastic"></i><p>Projekt</p></a></li>
+                    <li><a href="../pages/techstack.html" class="nav-link"><i class="fa-solid fa-code"></i><p>Techstack</p></a></li>
+                    <li class="bottom"><a href="../pages/contact.html" class="nav-link"><i class="fa-regular fa-envelope active-page"></i><p>Kontakt</p></a></li>
                 </ul>
             </nav>
         </aside>
@@ -39,27 +40,24 @@
     <main class="main-section">
     
         <section class="contact-section">
-            <article class="card">
+            <article class="card contact">
                 <h1 class="vertical">Kontakt</h1>
 
                 <div class="card-content">
                    <p class="headline1 center">Kontakta mig</p>
                     <form action="" class="contact-form">
-
-                        <label for="name">Ditt namn</label>
+                        <label for="name" class="headline2">Ditt namn</label>
                         <input type="text" name="name" id="name">
-                        <label for="email">Din mejl</label>
+                        <label for="email" class="headline2">Din mejl</label>
                         <input type="text" name="email" id="email"> 
-                        <label for="message">Ditt meddelande</label>
+                        <label for="message" class="headline2">Ditt meddelande</label>
                         <textarea name="message" id="message"></textarea>                  
+                        <button>Skicka</button>
                     </form>
-
                 </div>
-
-
             </article>
             <article class="card sm">
-                <h1 class="vertical">Socials</h1>
+                <h1 class="vertical">Socialt</h1>
                 <div class="card-content">
                     <p class="headline2">Här kan du nå mig annars</p>
                     <div class="socials">

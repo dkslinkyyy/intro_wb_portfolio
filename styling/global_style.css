@@ -210,13 +210,37 @@ li {
 }
 
 
+.card.contact {
+    height: 450px;
+}
+
 
 .card.project {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 2vh;
+}
+
+.card.techstack {
+    width: 450px;
+    height: auto;
+}
+
+
+.card.project:hover {
+    transform: translateY(-2%);
+}
+
+.card.project a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.card.project i {
+    font-size: 1.2rem;
 }
 
 
@@ -227,6 +251,7 @@ li {
     padding: 0 2vh;
     width: 100%;
 }
+
 
 .card-content.all-center {
     justify-content: center;
@@ -292,8 +317,40 @@ h1.vertical {
     height: 100%;
     align-items: center;
     justify-content: center;
+    text-align: left;
+    gap: 1vh;
 }
 
+
+label, input,textarea,button{
+    all: unset;
+    width: 100%;
+    border-radius: 10px;
+}
+
+input,textarea{
+    background-color: rgba(32, 32, 32, 0.2);
+    font-size: .8rem;
+}
+
+
+button {
+    background: var(--green-gradient);
+    text-align: center;
+    width: 100px;
+    height: 3vh;
+    cursor: pointer;
+
+}
+
+button:hover {
+
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 100px;
+}
 
 .projects-section {
     display: flex;
@@ -323,25 +380,28 @@ h1.vertical {
 }
 
 
-#projects-content::-webkit-scrollbar {
-    width: 12px;
-}
-
-#projects-content::-webkit-scrollbar-thumb {
-    background: var(--primary-bg-color); /* Scrollbar handle color */
-    border-radius: 6px; /* Rounded edges */
-}
-
-#projects-content::-webkit-scrollbar-track {
-    background: var(--primary-bg-color); /* Scrollbar track color */
-    border-radius: 6px; /* Rounded edges */
-}
-
-
-.repo {
+.techstack-row {
+    width: 100%;
+    height: auto;
     display: flex;
-    flex-direction: column;
+    background-color: rgba(32, 32, 32, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
 }
+
+.techstack-row img {
+    height: 26px;
+
+}
+
+.icon-github {
+    fill: white;
+}
+
 
 .hero-content {
     height: 200px;
