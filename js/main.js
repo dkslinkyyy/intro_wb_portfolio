@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const startDelay = (1000)*3; 
 
     function type() {
+        if(!typewriter) {
+            return;
+        }
         const currentWord = words[wordIndex];
         if (!isDeleting) {
             
@@ -82,29 +85,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('load', () => {
-        // Check if animation class is already applied
-        if (!document.body.classList.contains('animated')) {
-            // Animation logic
-            setTimeout(() => {
-                const mainElements = document.querySelectorAll("div:not(#loadingScreen) > *:not(img), div:not(#loadingScreen), article");
-    
-                console.log(mainElements);
-    
-                mainElements.forEach((element, index) => {
-                    element.style.opacity = 0;
-                    element.style.transform = 'translateY(10%)';
-    
-                    setTimeout(() => {
-                        element.style.transition = `all 1.5s ease ${index * 0.2}s`;
-                        element.style.opacity = 1;
-                        element.style.transform = 'translateY(0)';
-                    }, 1000);
-                });
-    
-                document.body.classList.add('animated');
-            }, 1000);
+        if (document.body.classList.contains('animated')) {
+            return;
         }
+    
+        setTimeout(() => {
+            const mainElements = document.querySelectorAll("div:not(#loadingScreen) > *:not(img), div:not(#loadingScreen), article");
+    
+            mainElements.forEach((element, index) => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(10%)';
+    
+                setTimeout(() => {
+                    element.style.transition = `all 1.5s ease ${index * 0.2}s`;
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+    
+                    // Reset transition after animation completes
+                    setTimeout(() => {
+                        element.style.transition = '';
+                    }, 1500 + index * 200); // Matches the animation duration
+                }, 1000);
+            });
+    
+            document.body.classList.add('animated');
+        }, 1000);
     });
+    
     
     
 
@@ -112,3 +119,64 @@ document.addEventListener('DOMContentLoaded', () => {
         type();
     }, startDelay);
 });
+
+
+const username = "dkslinkyyy";
+const apiUrl = `https://api.github.com/users/${username}/repos`;
+
+
+async function fetchRepositories() {
+    const repoList = document.getElementById('projects-content');
+
+    if(!repoList) return;
+    try {
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
+
+        const repos = await response.json();
+        
+        const languageIcons = {
+            JavaScript: 'devicon-javascript-plain',
+            Python: 'devicon-python-plain',
+            Java: 'devicon-java-plain',
+            HTML: 'devicon-html5-plain',
+            CSS: 'devicon-css3-plain',
+        };
+
+        repos.forEach(repo => {
+            const repoDiv = document.createElement('div');
+            repoDiv.classList.add('card');
+            repoDiv.classList.add('project');
+
+
+            const icon = document.createElement('i');
+            const iconClass = languageIcons[repo.language] || 'devicon-github-original';
+            icon.classList.add(iconClass);
+
+            const repoLink = document.createElement('a');
+            repoLink.href = repo.html_url;
+            repoLink.target = '_blank';
+            repoLink.textContent = repo.name;
+
+            const description = document.createElement('p');
+            description.textContent = repo.description || 'No description';
+
+            const language = document.createElement('p');
+            language.textContent = `Language: ${repo.language || 'Not specified'}`;
+
+            repoDiv.appendChild(icon);
+            repoDiv.appendChild(repoLink);
+            repoDiv.appendChild(description);
+            repoDiv.appendChild(language);
+            
+            repoList.appendChild(repoDiv);
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+fetchRepositories();

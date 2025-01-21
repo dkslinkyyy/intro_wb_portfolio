@@ -3,72 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dawid Kowalski - Portfolio</title>
+    <title>Om mig - Dawid Kowalski - Portfolio</title>
     <link rel="stylesheet" href="../styling/global_style.css">
-    <link rel="stylesheet" href="../styling/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <script src="../js/loadingScreen.js"></script>
+    <script src="https://kit.fontawesome.com/7acabd69fa.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 </head>
 <body>
-    <section  class="loading-screen" id="loadingScreen">
-        <img src="../assets/initialer.png" width="500px" alt="logga initialer">
-    </section>
-    <header>
-        <div class="header-logo">
-            <img src="../assets/initialer.png" alt="Logga initialer" width="150px">
+
+    <div id="particles-js"></div>
+    <header class="header" id="header">
+        <div class="header-content">
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <img src="../assets/initialer.png" alt="Logo Initialer" class="header-logo">
         </div>
-        <nav>
-            <a href="/" class="nav-link">
-                <i class="fa-solid fa-house"></i>
-            </a>
-            <a href="./about.html" class="nav-link">
-                <i class="fa-solid fa-user active-page"></i>
-            </a>
-            <a href="./projects.html" class="nav-link">
-                <i class="fa-solid fa-sheet-plastic"></i>
-            </a>
-            
-            <a href="./contact.html" class="nav-link bottom">
-                <i class="fa-regular fa-envelope"></i>
-            </a>
-        </nav>
+
+        <aside class="sidebar" id="sidebar">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link"><i class="fa-solid fa-house"></i><p>Hem</p></a></li>
+                    <li><a href="./pages/about.html" class="nav-link"><i class="fa-solid fa-user active-page"></i><p>Om mig</p></a></li>
+                    <li><a href="./projects.html" class="nav-link"><i class="fa-solid fa-sheet-plastic"></i><p>Projekt</p></a></li>
+                    <li class="bottom"><a href="./contact.html" class="nav-link"><i class="fa-regular fa-envelope"></i><p>Kontakt</p></a></li>
+                </ul>
+            </nav>
+        </aside>
     </header>
-    <main class="scroll-container">
-        
+
+
+
+    <main class="main-section">
+    
         <section class="contact-section">
-            <div class="contact-card">
-                <h1 class="contact-title">Kontakta Mig</h1>
+            <article class="card">
+                <h1 class="vertical">Kontakt</h1>
 
-                <form class="contact-content">
-                    <div class="form-group">
-                        <label for="fname">Fullständiga namn</label>
-                        <input type="text" id="fname" name="fname">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Mejl</label>
-                        <input type="text" id="email" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Meddelande</label>
-                        <textarea id="message" name="message" rows="4" cols="50" placeholder="Skriv ditt meddelande här.."></textarea>
-                    </div>
-                    <button type="submit">Skicka</button>
-                </form>      
-            </div>
-        </section>
+                <div class="card-content">
+                   <p class="headline1 center">Kontakta mig</p>
+                    <form action="" class="contact-form">
 
-        <section class="socials-section">
-            <div class="socials-card">
-                <i class="fa-brands fa-linkedin"></i>
-                <i class="fa-brands fa-github"></i>
-                <p>Mejl: dawid.kowalski@stud.sti.se</p>
-            </div>
+                        <label for="name">Ditt namn</label>
+                        <input type="text" name="name" id="name">
+                        <label for="email">Din mejl</label>
+                        <input type="text" name="email" id="email"> 
+                        <label for="message">Ditt meddelande</label>
+                        <textarea name="message" id="message"></textarea>                  
+                    </form>
+
+                </div>
+
+
+            </article>
+            <article class="card sm">
+                <h1 class="vertical">Socials</h1>
+                <div class="card-content">
+                    <p class="headline2">Här kan du nå mig annars</p>
+                    <div class="socials">
+                        <i class="fa-brands fa-github"></i>  
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </div>
+            </article>   
+
         </section>
 
     </main>
+
     <footer>
-
-
+        Dawid Kowalski &copy; 2024
     </footer>
-    <script src="https://kit.fontawesome.com/7acabd69fa.js" crossorigin="anonymous"></script>
-    <script src="../scripts/loadingScreen.js"></script>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>

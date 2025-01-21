@@ -53,6 +53,7 @@ body {
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
+
 }
 
 .header::after, .sidebar::after {
@@ -61,7 +62,7 @@ body {
     width: 100%;
     height: 100%;
     background: var(--nav-color);
-    opacity: .5;
+    opacity: .75;
     filter: blur(.6rem);
     z-index: -1;
 
@@ -77,7 +78,7 @@ body {
 
 .header-logo {
     max-width: 100%;
-    max-height: 72px;
+    max-height: 120px;
     object-fit: contain;
 }
 
@@ -175,6 +176,7 @@ li {
     justify-content: space-evenly;
     align-items: center;
     padding: 2rem;
+    scroll-behavior: smooth;
 }
 
 .main-section h1, .active-page {
@@ -200,13 +202,36 @@ li {
     user-select: none;
 
 }
+.card.sm {
+    width: 450px;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.card.project {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
 
 .card-content {
     display: flex;
     flex-direction: column;
     gap: 2vh;
     padding: 0 2vh;
+    width: 100%;
 }
+
+.card-content.all-center {
+    justify-content: center;
+}
+
 
 .headline2.snap-left {
     text-align: left;
@@ -229,6 +254,93 @@ li {
 
 h1.vertical {
     writing-mode: vertical-lr;
+    word-break: none;
+}
+
+.socials {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.5vh;
+}
+
+.socials i {
+    transition: color .3s ease;
+}
+
+.socials i:hover{
+    color: rgb(15, 173, 92);
+    cursor: pointer;
+
+}
+
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.projects-section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2vh;
+    align-items: center;
+}
+
+#projects-content {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2vh;
+    padding: 5vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-bg-color) var(--secondary-bg-color); /* Colors for Firefox */
+
+    scroll-behavior: smooth;
+}
+
+
+#projects-content::-webkit-scrollbar {
+    width: 12px;
+}
+
+#projects-content::-webkit-scrollbar-thumb {
+    background: var(--primary-bg-color); /* Scrollbar handle color */
+    border-radius: 6px; /* Rounded edges */
+}
+
+#projects-content::-webkit-scrollbar-track {
+    background: var(--primary-bg-color); /* Scrollbar track color */
+    border-radius: 6px; /* Rounded edges */
+}
+
+
+.repo {
+    display: flex;
+    flex-direction: column;
 }
 
 .hero-content {
@@ -321,6 +433,7 @@ footer {
 
     html,body {
         font-size: 1rem;
+        overflow: hidden;
     }
 
     footer {
@@ -334,6 +447,7 @@ footer {
 
     .main-section {
         margin-left: 0;
+        margin-top: var(--mobile-nav-height);
         flex-direction: column;
     }
 }
