@@ -189,7 +189,7 @@ li {
 
 .card {
     width: 450px;
-    height: 350px;
+    height: auto;
     text-align: center;
     background-color: rgba(39, 43, 58, 0.2);
     display: flex;
@@ -221,11 +221,11 @@ li {
     display: flex;
     flex-direction: column;
     gap: 2vh;
+    transition: transform .2s ease;
 }
 
 .card.techstack {
     width: 450px;
-    height: auto;
 }
 
 
@@ -343,10 +343,6 @@ button {
 
 }
 
-button:hover {
-
-}
-
 .contact-form textarea {
     resize: none;
     height: 100px;
@@ -358,7 +354,9 @@ button:hover {
     height: 100%;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     gap: 2vh;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -379,6 +377,16 @@ button:hover {
     scroll-behavior: smooth;
 }
 
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2vh;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
 
 .techstack-row {
     width: 100%;
@@ -395,7 +403,11 @@ button:hover {
 
 .techstack-row img {
     height: 26px;
+    transition: transform .3s ease;
+}
 
+.techstack-row img:hover {
+    transform: scale(1.2);
 }
 
 .icon-github {
