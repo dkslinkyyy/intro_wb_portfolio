@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fetch Repositories
     const username = "dkslinkyyy";
     const apiURL = `https://api.github.com/users/${username}/repos`;
-
     const languageIcons = {
         JavaScript: "devicon-javascript-plain",
         Python: "devicon-python-plain",
@@ -91,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             const response = await fetch(apiURL);
+            
             if (!response.ok) throw new Error(`Error: ${response.statusText}`);
             const repos = await response.json();
 
