@@ -7,11 +7,14 @@
     <meta name="description" content="Det här en portfolio 
     sida om Dawid Kowalski, en utvecklare..">
 
-    <link rel="stylesheet" href="/intro_wb_portfolio/styling/global_style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styling/global_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-    <script src="/intro_wb_portfolio/js/loadingScreen.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <script src="../js/loadingScreen.js"></script>
     <script src="https://kit.fontawesome.com/7acabd69fa.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <title> Dawid Kowalski - Portfolio</title>
@@ -25,17 +28,17 @@
             <div class="menu-toggle" id="menuToggle">
                 <i class="fa-solid fa-bars"></i>
             </div>
-            <img src="/intro_wb_portfolio/assets/initialer.png" alt="Logo Initialer" class="header-logo">
+            <img src="../assets/initialer.png" alt="Logo Initialer" class="header-logo">
         </div>
         <aside class="sidebar" id="sidebar">
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/intro_wb_portfolio/" class="nav-link"><i class="fa-solid fa-house"></i><p>Hem</p></a></li>
-                    <li><a href="/intro_wb_portfolio/pages/about.html" class="nav-link"><i class="fa-solid fa-user"></i><p>Om mig</p></a></li>
-                    <li><a href="/intro_wb_portfolio/pages/projects.html" class="nav-link"><i class="fa-solid fa-sheet-plastic"></i><p>Projekt</p></a></li>
-                    <li><a href="/intro_wb_portfolio/pages/techstack.html" class="nav-link"><i class="fa-solid fa-code"></i><p>Techstack</p></a></li>
-                    <li><a href="/intro_wb_portfolio/pages/cv.html" class="nav-link"><i class="fa-solid fa-file"></i><p>CV</p></a></li>
-                    <li><a href="/intro_wb_portfolio/pages/contact.html" class="nav-link"><i class="fa-regular fa-envelope active-page"></i><p>Kontakt</p></a></li>
+                    <li><a href="../" class="nav-link"><i class="fa-solid fa-house"></i><p>Hem</p></a></li>
+                    <li><a href="../pages/about.html" class="nav-link"><i class="fa-solid fa-user"></i><p>Om mig</p></a></li>
+                    <li><a href="../pages/projects.html" class="nav-link"><i class="fa-brands fa-github"></i><p>Projekt</p></a></li>
+                    <li><a href="../pages/techstack.html" class="nav-link"><i class="fa-solid fa-code"></i><p>Techstack</p></a></li>
+                    <li><a href="../pages/cv.html" class="nav-link"><i class="fa-solid fa-file"></i><p>CV</p></a></li>
+                    <li><a href="../pages/contact.html" class="nav-link"><i class="fa-regular fa-envelope active-page"></i><p>Kontakt</p></a></li>
                 </ul>
             </nav>
         </aside>
@@ -47,11 +50,11 @@
     
         <section class="contact-section">
             <article class="card">
-                <h1 class="vertical">Kontakt</h1>
+                <p class="vertical highlight">Kontakt</p>
 
                 <div class="card-content">
-                   <p class="headline1 center">Kontakta mig</p>
-                    <form action="https://formspree.io/f/mkgonnoo"method="POST" class="contact-form">
+                   <h1 class="headline1 center">Kontakta mig</h1>
+                    <form action="https://formspree.io/f/mkgonnoo" method="POST" class="contact-form">
                         <label for="name" class="headline2">Ditt namn</label>
                         <input type="text" name="name" id="name">
                         <label for="email" class="headline2">Din mejl</label>
@@ -63,20 +66,20 @@
                 </div>
             </article>
             <article class="card">
-                <h1 class="vertical">Socialt</h1>
+                <p class="vertical highlight">Socialt</p>
                 <div class="card-content">
                     <p class="headline2">Här kan du nå mig annars</p>
                     <div class="socials">
                         <a href="https://github.com/dkslinkyyy">
-                            <i class="fa-brands fa-github" alt="github"></i>  
+                            <i class="fa-brands fa-github"></i>  
 
                         </a>
                         <a href="https://www.linkedin.com/in/dawid-kowalski-55343921a/">
-                            <i class="fa-brands fa-linkedin" alt="linkedin"></i>
+                            <i class="fa-brands fa-linkedin"></i>
 
                         </a>
                         <a href="mailto:dawid.sthlm@gmai.com">
-                            <i class="fa-solid fa-envelope" alt="envelope"></i>
+                            <i class="fa-solid fa-envelope"></i>
                         </a>
                     </div>
                 </div>
@@ -90,6 +93,6 @@
         Dawid Kowalski &copy; 2024
     </footer>
 
-    <script src="/intro_wb_portfolio/js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

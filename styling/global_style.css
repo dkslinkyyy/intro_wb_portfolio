@@ -40,6 +40,11 @@ body {
     flex-direction: column;
     overflow: hidden;
 }
+p {
+    font-family: "Ubuntu", serif;
+    font-weight: 300;
+    font-style: normal;
+}
 
 
 #particles-js {
@@ -207,11 +212,12 @@ li {
     gap: 2vh;
 }
 
-.main-section h1, .active-page {
+.active-page, .highlight {
     background: var(--green-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
 
 
@@ -230,6 +236,8 @@ li {
     user-select: none;
 
 }
+
+
 
 .card.sm {
     width: 450px;
@@ -252,8 +260,8 @@ li {
 
 
 .card.project {
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: auto;
     display: flex;
     flex-direction: column;
     gap: 2vh;
@@ -269,12 +277,14 @@ li {
     transform: translateY(-2%);
 }
 
+.card.project i {
+    font-size: 36px;
+}
+
 .card.project a {
     text-decoration: none;
     color: white;
 }
-
-
 
 .card-content {
     display: flex;
@@ -283,27 +293,19 @@ li {
     padding: 0 2vh;
     width: 100%;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-content.text-left {
     text-align: left;
 }
 
-.card-content.all-center {
-    justify-content: center;
-}
-
 
 .headline2.snap-left {
     text-align: left;
 }
-.highlight {
-    background: var(--green-gradient);
-    font-weight: bolder;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+
 
 
 
@@ -315,7 +317,7 @@ li {
 }
 
 
-h1.vertical {
+.vertical {
     writing-mode: vertical-lr;
     word-break: none;
     font-size: 2rem;
@@ -330,6 +332,7 @@ h1.vertical {
 
 .socials i {
     transition: color .3s ease;
+    color: white;
 }
 
 .nav-links a:hover, .socials i:hover {
@@ -458,7 +461,10 @@ section {
     justify-content: center;
     overflow-y: auto;
     overflow-x: hidden;
+    padding: 2vh 0;
 }
+
+
 
 .bottom-padding {
     padding-bottom: 15vh;
@@ -559,9 +565,10 @@ footer {
 
 @media screen and (max-width: 768px) {
     :root {
-        --image-size: calc(var(--base-image-size) * 0.7); 
-        --font-size: calc(var(--base-font-size) * 0.9); 
+        --image-size: calc(var(--base-image-size) * 0.6); 
+        --font-size: calc(var(--base-font-size) * 0.85); 
     }
+
     .header {
         flex-direction: row;
         width: 100%;

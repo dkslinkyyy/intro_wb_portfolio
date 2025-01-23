@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Particles.js Initialization
     particlesJS("particles-js", {
         particles: {
-            number: { value: 50, density: { enable: true, value_area: 800 } },
+            number: { value: 90, density: { enable: true, value_area: 800 } },
             color: { value: "#ffffff" },
             shape: { type: "circle" },
             opacity: { value: 0.5 },
-            size: { value: 4, random: true },
+            size: { value: 5, random: true },
             line_linked: {
                 enable: true,
                 distance: 150,
@@ -76,12 +76,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fetch Repositories
     const username = "dkslinkyyy";
     const apiURL = `https://api.github.com/users/${username}/repos`;
+    const token =`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`;
     const languageIcons = {
         JavaScript: "devicon-javascript-plain",
         Python: "devicon-python-plain",
         Java: "devicon-java-plain",
         HTML: "devicon-html5-plain",
         CSS: "devicon-css3-plain",
+        Go: "devicon-go-original-wordmark"
     };
 
     const fetchRepositories = async () => {
@@ -103,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const icon = document.createElement("i");
                 icon.classList.add(languageIcons[repo.language] || "devicon-github-original", "highlight");
-
                 const repoLink = document.createElement("a");
                 repoLink.href = repo.html_url;
                 repoLink.target = "_blank";
