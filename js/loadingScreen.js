@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadingScreen.classList.add('loading-screen');
     
     const logo = document.createElement('img');
-    logo.src = 'assets/initialer.png';  
+    logo.src = '../assets/initialer.png';  
     logo.alt = 'Logo';
 
     loadingScreen.appendChild(logo);

@@ -3,7 +3,7 @@
     --card-height: auto;
 
     /* övriga variabler*/
-    --background-image: url("/assets/bg.jpg");
+    --background-image: url("/../assets/bg.jpg");
     --primary-bg-color: #05090a;
     --secondary-bg-color: #272b3a;
     --nav-color: linear-gradient(15deg, rgba(5,9,10,1) 0%, rgba(17,55,43,1) 49%, rgba(14,98,68,1) 68%, rgba(2,11,8,1) 90%);
