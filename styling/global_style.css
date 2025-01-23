@@ -216,7 +216,7 @@ button {
 
 
 
-.main-section {
+main {
     flex: 1;
     margin-left: var(--header-width);
     display: flex;
@@ -233,7 +233,7 @@ button {
     scroll-behavior: smooth;
 }
 
-.main-section.techstack {
+main.techstack {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -614,7 +614,7 @@ section {
         transform:  translateX(0);
     }
 
-    .main-section {
+    main {
         margin-left: 0;
         margin-top: var(--mobile-nav-height);
     }
