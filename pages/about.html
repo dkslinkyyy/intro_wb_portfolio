@@ -51,8 +51,11 @@
             <div class="card-content">
                 <div class="card-image">
                     <div class="image-wrapper sm">
-                        <img src="/intro_wb_portfolio/assets/portrait.JPG" alt="">
-                    </div>  
+                        <picture>
+                            <source media="(min-width: 465px)" srcset="/intro_wb_portfolio/assets/portrait.JPG">
+                            <source media="(min-width: 1000px)" srcset="/intro_wb_portfolio/assets/portrait.JPG">
+                            <img src="/intro_wb_portfolio/assets/portrait.JPG" alt="hero profile">
+                        </picture> 
                 </div>
                 <p class="headline1">Vem är jag?</p>
                 <p class="headline2">Dawid heter jag, 21 år gammal. gillar koda algoritmer. Utvecklare, mångsysslare och mycket mer!</p>
