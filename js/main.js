@@ -62,21 +62,35 @@ document.addEventListener("DOMContentLoaded", () => {
         icon?.classList.toggle("fa-xmark");
     });
 
-    // Search Functionality
     const searchInput = document.getElementById("techstack-category");
+
     searchInput?.addEventListener("input", (event) => {
         const searchTerm = event.target.value.toLowerCase();
-        document.querySelectorAll(".card:not(#search) ").forEach((card) => {
-            const titleElement = card.querySelector(".headline1");
-            const titleText = titleElement ? titleElement.textContent.toLowerCase() : "";
-            card.style.display = titleText.includes(searchTerm) ? "flex" : "none";
+        
+        document.querySelectorAll(".card:not(#search)").forEach((card) => {
+            let hasMatchingIcons = false;
+    
+            const icons = card.querySelectorAll(".techstack-row img");
+    
+            icons.forEach((icon) => {
+                const iconTitle = icon.getAttribute("title").toLowerCase();
+    
+                if (iconTitle.includes(searchTerm)) {
+                    icon.style.display = "inline-block"; 
+                    hasMatchingIcons = true;
+                } else {
+                    icon.style.display = "none"; 
+                }
+            });
+    
+            card.style.display = hasMatchingIcons ? "flex" : "none";
         });
     });
+    
 
     // Fetch Repositories
     const username = "dkslinkyyy";
     const apiURL = `https://api.github.com/users/${username}/repos`;
-    const token =`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`;
     const languageIcons = {
         JavaScript: "devicon-javascript-plain",
         Python: "devicon-python-plain",
