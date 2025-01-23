@@ -1,8 +1,12 @@
 :root {
+    --card-width: 450px;
+    --card-height: auto;
+
+    /* övriga variabler*/
     --background-image: url("/assets/bg.jpg");
     --primary-bg-color: #05090a;
     --secondary-bg-color: #272b3a;
-    --nav-color:linear-gradient(15deg, rgba(5,9,10,1) 0%, rgba(17,55,43,1) 49%, rgba(14,98,68,1) 68%, rgba(2,11,8,1) 90%);
+    --nav-color: linear-gradient(15deg, rgba(5,9,10,1) 0%, rgba(17,55,43,1) 49%, rgba(14,98,68,1) 68%, rgba(2,11,8,1) 90%);
     --green-gradient: linear-gradient(15deg, rgba(57,215,130,1) 0%, rgba(17,113,79,1) 68%, rgba(11,74,53,1) 90%);
     --primary-text-color: #ececec;
     --secondary-text-color: #c4c4c4;
@@ -13,7 +17,13 @@
     --mobile-nav-width: 50%;
     --transition-duration: 0.5s;
     --font-family: "Righteous", sans-serif;
+    --base-font-size: 1.1rem;
+    --font-size: 1.1rem;
+
+    --base-image-size: 300px;
+    --image-size: 300px;
 }
+
 
 * {
     margin: 0;
@@ -40,7 +50,6 @@ body {
     height: 100%;
     z-index: -1;
 }
-
 
 .header {
     position: fixed;
@@ -86,20 +95,22 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
     font-family: Arial, sans-serif;
-    font-size: 1.2rem;
+    font-size: var(--font-size); 
 
 }
 
+
+
 li {
-    font-size: .8rem;
     list-style: none;
     color: var(--secondary-text-color);
 }
 
 .loading-screen {
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     z-index: 9999;
@@ -107,17 +118,22 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(0);
+    transform: translateX(0);
     transition: transform 1s ease;
 }
 
 .image-wrapper {
     object-fit: contain;
-    width:300px;
-    height: 300px;
+    width: var(--image-size);
+    height: var(--image-size);
     overflow: hidden;
     border-radius: 50%;
 
+}
+
+.image-wrapper.sm {
+    width: calc(var(--image-size) * 0.95);
+    height: calc(var(--image-size) * 0.95);
 }
 
 .image-wrapper img {
@@ -128,7 +144,7 @@ li {
 }
 
 .loading-screen.active {
-    transform: translateY(100%);
+    transform: translateX(100%);
 }
 
 .loading-screen img {
@@ -163,19 +179,31 @@ li {
     transition: color var(--transition-duration);
 }
 
-.nav-links a:hover {
-    color: var(--secondary-text-color);
-}
+
 
 .main-section {
     flex: 1;
     margin-left: var(--header-width);
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    padding: 2rem;
+    padding: 2vh;
     scroll-behavior: smooth;
+    height: 100%;
+        scrollbar-width: thin;
+    scrollbar-color: var(--primary-bg-color) var(--secondary-bg-color); 
+
+    scroll-behavior: smooth;
+}
+
+.main-section.techstack {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 2vh;
 }
 
 .main-section h1, .active-page {
@@ -187,8 +215,8 @@ li {
 
 
 .card {
-    width: 450px;
-    height: auto;
+    width: var(--card-width);
+    height: var(--card-height);
     text-align: center;
     background-color: rgba(39, 43, 58, 0.2);
     display: flex;
@@ -201,11 +229,19 @@ li {
     user-select: none;
 
 }
+
 .card.sm {
     width: 450px;
     height: 150px;
     display: flex;
     justify-content: space-around;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -234,13 +270,9 @@ li {
 
 .card.project a {
     text-decoration: none;
-    font-size: 1.1rem;
     color: white;
 }
 
-.card.project i {
-    font-size: 1.2rem;
-}
 
 
 .card-content {
@@ -249,8 +281,12 @@ li {
     gap: 2vh;
     padding: 0 2vh;
     width: 100%;
+    text-align: center;
 }
 
+.card-content.text-left {
+    text-align: left;
+}
 
 .card-content.all-center {
     justify-content: center;
@@ -268,6 +304,8 @@ li {
     -webkit-text-fill-color: transparent;
 }
 
+
+
 .card-details {
     display: flex;
     flex-direction: column;
@@ -279,6 +317,7 @@ li {
 h1.vertical {
     writing-mode: vertical-lr;
     word-break: none;
+    font-size: 2rem;
 }
 
 .socials {
@@ -292,11 +331,10 @@ h1.vertical {
     transition: color .3s ease;
 }
 
-.socials i:hover{
-    color: rgb(15, 173, 92);
-    cursor: pointer;
-
+.nav-links a:hover, .socials i:hover {
+    color: var(--secondary-text-color);
 }
+
 
 
 .contact-section {
@@ -304,8 +342,8 @@ h1.vertical {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 2vh;
 }
 
@@ -319,8 +357,47 @@ h1.vertical {
     text-align: left;
     gap: 1vh;
 }
+.card-row {
+    position: relative;
+    width: 100%;
 
+}
 
+.comptence-bar {
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background-color: var(--secondary-bg-color);
+    z-index: -1;
+}
+
+.comptence-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 5px;
+    width: 100%;
+    background-color: var(--secondary-text-color);
+}
+.comptence-bar.wd-90::after {
+    width: 90%;
+}
+.comptence-bar.wd-80::after {
+    width: 80%;
+}
+
+.comptence-bar.wd-70::after {
+    width: 70%;
+}
+
+.comptence-bar.wd-60::after {
+    width: 60%;
+}
+
+.comptence-bar.wd-50::after {
+    width: 50%;
+}
 label, input,textarea,button{
     all: unset;
     width: 100%;
@@ -329,7 +406,6 @@ label, input,textarea,button{
 
 input,textarea{
     background-color: rgba(32, 32, 32, 0.2);
-    font-size: .8rem;
 }
 
 
@@ -360,20 +436,17 @@ button {
 }
 
 #projects-content {
-    width: calc(100% - 10vh); /* Adjust width to account for padding */
-    padding: 2vh; /* Reduce padding for smaller screens */
+    width: 100%;
+    height: 75vh;
     display: flex;
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 2vh;
+    padding: 5vh;
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-bg-color) var(--secondary-bg-color);
-    scroll-behavior: smooth;
 }
-
 
 section {
     display: flex;
@@ -382,9 +455,17 @@ section {
     gap: 2vh;
     align-items: flex-start;
     justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
+.bottom-padding {
+    padding-bottom: 15vh;
+}
 
+.no-overflow {
+    overflow: hidden;
+}
 
 .techstack-row {
     width: 100%;
@@ -425,19 +506,16 @@ section {
 .hero-section {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100%;
     gap: 1vh;
 }
 
 .headline2 {
-    font-size: .9rem;
-}
-.headline2 {
     color: var(--secondary-text-color);
-    font-size: .8rem;
+    position: relative;
 }
 
 .typewriter {
@@ -461,11 +539,17 @@ footer {
     margin-left: var(--header-width);
     text-align: center;
     padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - var(--header-width));
 }
 @media screen and (max-width: 1024px) {
-    .image-wrapper {
-        width: 200px;
-        height: 200px;
+    :root {
+        --image-size: calc(var(--base-image-size) * 0.8); 
+        --font-size: calc(var(--base-font-size) * 0.95); 
+    }
+    .vertical {
+        display: none;
     }
 
 
@@ -473,6 +557,10 @@ footer {
 
 
 @media screen and (max-width: 768px) {
+    :root {
+        --image-size: calc(var(--base-image-size) * 0.7); 
+        --font-size: calc(var(--base-font-size) * 0.9); 
+    }
     .header {
         flex-direction: row;
         width: 100%;
@@ -484,7 +572,6 @@ footer {
         justify-content: space-between;
         padding: 0 2vh;
     }
-
 
     .menu-toggle {
         display: block;
@@ -499,13 +586,15 @@ footer {
         transition: transform .3s ease;
     }
 
-    html,body {
-        font-size: 1rem;
-        overflow: hidden;
-    }
 
     footer {
         margin-left: 0;
+        width: 100%;        
+    }
+
+
+    .card-content {
+        padding: 0;
     }
 
 
@@ -517,6 +606,16 @@ footer {
     .main-section {
         margin-left: 0;
         margin-top: var(--mobile-nav-height);
-        flex-direction: column;
     }
+
+
+    .card {
+        width: 250px;
+    }
+
 }
+
+.bold {
+    font-weight: bold;
+}
+
