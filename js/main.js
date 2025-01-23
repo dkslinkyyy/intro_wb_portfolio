@@ -31,25 +31,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const speeds = { typing: 100, deleting: 100, wordDelay: 2000, startDelay: 3000 };
 
     const type = () => {
-        if (!typewriter) return;
+        if (!typewriter) return; // returnera om ingen typrwriter selector hittqs
+    
+        const currentWord = words[wordIndex]; // Hämta nuvarande ord
+        typewriter.textContent = currentWord.substring(0, charIndex + (isDeleting ? -1 : 1)); // Uppdatera 'typewriter' med delsträng beroende på charIndex och radering
 
-        const currentWord = words[wordIndex];
-        typewriter.textContent = currentWord.substring(0, charIndex + (isDeleting ? -1 : 1));
         charIndex += isDeleting ? -1 : 1;
-
+    
+        // börja radera om den inte raderar och charIndex är lika med längden på det aktuella ordet, 
         if (!isDeleting && charIndex === currentWord.length) {
-            isDeleting = true;
-            setTimeout(type, speeds.wordDelay);
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
+            isDeleting = true; 
+            setTimeout(type, speeds.wordDelay); // liten delay in funktion call
+        } 
+
+        // Nästa ord, charIndex är 0
+        else if (isDeleting && charIndex === 0) {
+            isDeleting = false; // reset
             wordIndex = (wordIndex + 1) % words.length;
-            setTimeout(type, speeds.typing);
+            setTimeout(type, speeds.typing); // Vänta innan vi börjar skriva nästa ord
         } else {
+            //skriv om isDeleting, om inte fortsätt radera
             setTimeout(type, isDeleting ? speeds.deleting : speeds.typing);
         }
     };
-
+    
     setTimeout(type, speeds.startDelay);
+    
 
     // Sidebar Toggle
     const toggleMenuBtn = document.getElementById("menuToggle");
