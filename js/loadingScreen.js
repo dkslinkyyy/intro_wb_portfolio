@@ -16,19 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000); 
 
 
-    const links = document.querySelectorAll('.nav-link');
+    const elements = document.querySelectorAll('.nav-link, #ctaBtn');
 
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
+    elements.forEach(element => {
+        element.addEventListener('click', (e) => {
             e.preventDefault(); 
+
+            console.log(element)
     
             loadingScreen.style.transition = 'none';  
             loadingScreen.style.animation = '';       
     
             loadingScreen.style.transform = 'translateY(0)';
     
+            const href = element.getAttribute('href') || element.getAttribute('data-href');
+
             setTimeout(() => {
-                window.location.href = link.getAttribute('href');
+                window.location.href = href;
             }, 2000); 
     
             setTimeout(() => {

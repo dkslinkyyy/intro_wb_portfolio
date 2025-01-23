@@ -83,11 +83,13 @@ input,textarea{
 button {
     background: var(--green-gradient);
     text-align: center;
-    width: 100px;
-    height: 3vh;
+    width: 150px;
+    height: auto;
+    padding: .3rem;
     cursor: pointer;
 
 }
+
 
 #particles-js {
     position: absolute;
