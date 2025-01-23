@@ -61,7 +61,6 @@ li {
 }
 
 main {
-    flex: 1;
     margin-left: var(--header-width);
     display: flex;
     flex-direction: row;
@@ -467,7 +466,7 @@ section {
 
 
 
-.bottom-padding {
+main.bottom-padding {
     padding-bottom: 15vh;
 }
 
