@@ -24,7 +24,7 @@
     --image-size: 300px;
 }
 
-
+/* default selectors här */
 * {
     margin: 0;
     padding: 0;
@@ -46,6 +46,48 @@ p {
     font-style: normal;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    font-size: var(--font-size); 
+
+}
+
+li {
+    list-style: none;
+    color: var(--secondary-text-color);
+}
+
+footer {
+    margin-left: var(--header-width);
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - var(--header-width));
+}
+
+label, input,textarea,button{
+    all: unset;
+    width: 100%;
+    border-radius: 10px;
+}
+
+input,textarea{
+    background-color: rgba(32, 32, 32, 0.2);
+}
+
+
+button {
+    background: var(--green-gradient);
+    text-align: center;
+    width: 100px;
+    height: 3vh;
+    cursor: pointer;
+
+}
 
 #particles-js {
     position: absolute;
@@ -96,21 +138,6 @@ p {
     object-fit: contain;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    font-size: var(--font-size); 
-
-}
-
-
-
-li {
-    list-style: none;
-    color: var(--secondary-text-color);
-}
 
 .loading-screen {
     position: fixed;
@@ -402,25 +429,6 @@ li {
 .comptence-bar.wd-50::after {
     width: 50%;
 }
-label, input,textarea,button{
-    all: unset;
-    width: 100%;
-    border-radius: 10px;
-}
-
-input,textarea{
-    background-color: rgba(32, 32, 32, 0.2);
-}
-
-
-button {
-    background: var(--green-gradient);
-    text-align: center;
-    width: 100px;
-    height: 3vh;
-    cursor: pointer;
-
-}
 
 .contact-form textarea {
     resize: none;
@@ -542,14 +550,7 @@ section {
     transform: rotateX(180deg);
 }
 
-footer {
-    margin-left: var(--header-width);
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: calc(100% - var(--header-width));
-}
+
 @media screen and (max-width: 1024px) {
     :root {
         --image-size: calc(var(--base-image-size) * 0.8); 
