@@ -149,4 +149,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchRepositories();
 
+
+        // Add autoplay background music
+    const addBackgroundMusic = () => {
+        const audio = document.createElement("audio");
+        audio.src = "../assets/background-music.mp3"; // Replace with the path to your audio file
+        audio.autoplay = true;
+        audio.loop = true;
+        audio.volume = 0.1; // Set volume to 50%
+        document.body.appendChild(audio);
+    };
+
+    addBackgroundMusic();
+
 });
