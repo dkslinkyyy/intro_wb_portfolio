@@ -136,7 +136,8 @@ li {
     height: calc(var(--image-size) * 0.95);
 }
 
-.image-wrapper img {
+
+.image-wrapper img  picture{
     width: 100%;
     height: 100%;
     object-fit: cover;
